@@ -81,3 +81,18 @@ put: /api/experiencia  ejample: {
     
 delete: api/proyecto/{id}
 
+# Redes Sociales
+
+get: /api/redes
+
+post: /api/redes/add ejample: {"twiter":"@pajarino loco","fb":"HTTP//...","ws":"011-1111-11111","github":"url de mi gitgub"} 
+
+put: /api/redes ejample:  {
+        "id": 13,
+        "twiter": "@pajarino loco",
+        "fb": "HTTp//...",
+        "ws": "11-11111-11111",
+        "github": "url de mi gitgub"
+    }
+
+delete: /api/redes/{id}
