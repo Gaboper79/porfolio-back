@@ -1,5 +1,7 @@
 package com.backporfolio.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,7 +25,7 @@ public class datosPersonalesController {
 	private DatosPersonalesService datospSvc;
 
 	@GetMapping("{id}")
-	public ResponseEntity<DatosPersonales> getDatosPer(@PathVariable Long id) {
+	public ResponseEntity<List<DatosPersonales>> getDatosPer(@PathVariable Long id) {
 
 		return ResponseEntity.ok(datospSvc.getDatosP(id));
 	}

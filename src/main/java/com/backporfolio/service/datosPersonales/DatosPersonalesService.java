@@ -1,5 +1,7 @@
 package com.backporfolio.service.datosPersonales;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,9 @@ public class DatosPersonalesService implements IDatosPersonales {
 	private DatosPerRepository datosPRepo;
 
 	@Override
-	public DatosPersonales getDatosP(Long id) {
+	public List<DatosPersonales> getDatosP(Long id) {
 
-		return datosPRepo.findById(id).orElse(null);
+		return datosPRepo.findAll();
 	}
 
 	@Override
