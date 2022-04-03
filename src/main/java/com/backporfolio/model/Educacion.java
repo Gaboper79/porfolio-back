@@ -1,28 +1,50 @@
 package com.backporfolio.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "educacion")
 public class Educacion {
 
-	private String tirulo;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	private String titulo;
+
 	private String fecha;
+
 	private String institucion;
 
 	public Educacion() {
 
 	}
 
-	public Educacion(String tirulo, String fecha, String institucion) {
+	public Educacion(String titulo, String fecha, String institucion) {
 
-		this.tirulo = tirulo;
+		this.titulo = titulo;
 		this.fecha = fecha;
 		this.institucion = institucion;
 	}
 
-	public String getTirulo() {
-		return tirulo;
+	public Long getId() {
+		return id;
 	}
 
-	public void setTirulo(String tirulo) {
-		this.tirulo = tirulo;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getFecha() {

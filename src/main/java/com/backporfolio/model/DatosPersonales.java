@@ -1,12 +1,22 @@
 package com.backporfolio.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "datos_personales")
 public class DatosPersonales {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String imgUser;
 	private String aboutMe;
 	private String titulo;
 	private String nombre;
-	private RedesSociales redesSociales;
 
 	public DatosPersonales() {
 		super();
@@ -18,7 +28,15 @@ public class DatosPersonales {
 		this.aboutMe = aboutMe;
 		this.titulo = titulo;
 		this.nombre = nombre;
-		this.redesSociales = redesSociales;
+
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getImgUser() {
@@ -51,14 +69,6 @@ public class DatosPersonales {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public RedesSociales getRedesSociales() {
-		return redesSociales;
-	}
-
-	public void setRedesSociales(RedesSociales redesSociales) {
-		this.redesSociales = redesSociales;
 	}
 
 }
