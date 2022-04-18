@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,27 +19,32 @@ import com.backporfolio.service.experiencia.ExperienciaService;
 
 @RestController
 @RequestMapping("api/experiencia")
+@CrossOrigin
 public class ExperienciaController {
 	@Autowired
 	private ExperienciaService expSVC;
 
 	@GetMapping
+	@CrossOrigin
 	public ResponseEntity<List<Experiencia>> getAllExp() {
 		return ResponseEntity.ok(expSVC.getAllExperiencia());
 	}
 
 	@PostMapping("/add")
+	@CrossOrigin
 	public ResponseEntity<Experiencia> addExperiencia(@RequestBody Experiencia exp) {
 		return ResponseEntity.ok(expSVC.saveExperiencia(exp));
 	}
 
 	@DeleteMapping("{id}")
+	@CrossOrigin
 	public ResponseEntity<String> deleteExperiencia(@PathVariable Long id) {
 		expSVC.deleteExperiencia(id);
 		return ResponseEntity.ok("Eliminado Correctamente");
 	}
 
 	@PutMapping()
+	@CrossOrigin
 	public ResponseEntity<Experiencia> UpdateExperiencia(@RequestBody Experiencia edu) {
 		return ResponseEntity.ok(expSVC.saveExperiencia(edu));
 	}

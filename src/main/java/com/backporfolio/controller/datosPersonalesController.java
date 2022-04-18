@@ -19,15 +19,24 @@ import com.backporfolio.service.datosPersonales.DatosPersonalesService;
 
 @RestController
 @RequestMapping("api/datosper")
+@CrossOrigin
 public class datosPersonalesController {
 
 	@Autowired
 	private DatosPersonalesService datospSvc;
 
-	@GetMapping("{id}")
-	public ResponseEntity<List<DatosPersonales>> getDatosPer(@PathVariable Long id) {
+	@GetMapping()
+	@CrossOrigin
+	public ResponseEntity<List<DatosPersonales>> getDatosPer() {
 
-		return ResponseEntity.ok(datospSvc.getDatosP(id));
+		return ResponseEntity.ok(datospSvc.getDatosP());
+	}
+
+	@GetMapping("{id}")
+	@CrossOrigin
+	public ResponseEntity<DatosPersonales> getById(@PathVariable Long id) {
+
+		return ResponseEntity.ok(datospSvc.findByID(id));
 	}
 
 	@PostMapping("/add")
@@ -39,14 +48,18 @@ public class datosPersonalesController {
 	}
 
 	@DeleteMapping("{id}")
+	@CrossOrigin
 	public ResponseEntity<String> deleteDatosPer(@PathVariable Long id) {
 		datospSvc.deleteDatosP(id);
 		return ResponseEntity.ok("eliminado correctamente");
 	}
 
 	@PutMapping()
+	@CrossOrigin
 	public ResponseEntity<DatosPersonales> updateDatosPer(@RequestBody DatosPersonales datosp) {
+		System.out.println("actualizo");
 		datospSvc.saveDatosP(datosp);
+
 		return ResponseEntity.ok(datosp);
 	}
 }
