@@ -15,13 +15,14 @@ public class DatosPersonalesService implements IDatosPersonales {
 	private DatosPerRepository datosPRepo;
 
 	@Override
-	public List<DatosPersonales> getDatosP(Long id) {
+	public List<DatosPersonales> getDatosP() {
 
 		return datosPRepo.findAll();
 	}
 
 	@Override
 	public void saveDatosP(DatosPersonales datosP) {
+		System.out.println("llega el put");
 		datosPRepo.save(datosP);
 
 	}
@@ -30,6 +31,12 @@ public class DatosPersonalesService implements IDatosPersonales {
 	public void deleteDatosP(Long id) {
 		datosPRepo.deleteById(id);
 
+	}
+
+	@Override
+	public DatosPersonales findByID(Long id) {
+
+		return datosPRepo.findById(id).orElse(null);
 	}
 
 }
