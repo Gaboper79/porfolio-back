@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,7 @@ public class skillController {
 		return ResponseEntity.ok(skillSvc.getAllskill());
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/add")
 	public ResponseEntity<Skills> saveSkill(@RequestBody Skills skill) {
 
@@ -37,12 +39,14 @@ public class skillController {
 		return ResponseEntity.ok(skill);
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("{id}")
 	public ResponseEntity<String> deleteSkill(@PathVariable Long id) {
 		skillSvc.deleteSkill(id);
 		return ResponseEntity.ok("Eliminado Correctamente");
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping()
 	public ResponseEntity<Skills> updateSkill(@RequestBody Skills skill) {
 
