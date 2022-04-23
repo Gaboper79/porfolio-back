@@ -75,6 +75,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/login")
+	@CrossOrigin
 	public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			return new ResponseEntity("CAmpos mal puestos", HttpStatus.BAD_REQUEST);
