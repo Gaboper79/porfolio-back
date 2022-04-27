@@ -55,7 +55,7 @@ public class AuthController {
 			return new ResponseEntity("Campos mal puestos", HttpStatus.BAD_REQUEST);
 		}
 		if (usuarioService.exitsNyNombreUduario(nuevoUsuario.getNombreUsuario())) {
-			return new ResponseEntity("Ese nombre ya existe", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity("Ese nombre de usuario ya existe", HttpStatus.BAD_REQUEST);
 		}
 		if (usuarioService.exitsNyEmail(nuevoUsuario.getEmail())) {
 			return new ResponseEntity("Ese mail ya existe", HttpStatus.BAD_REQUEST);
@@ -71,14 +71,15 @@ public class AuthController {
 		}
 		usuario.setRoles(roles);
 		usuarioService.save(usuario);
-		return new ResponseEntity("usuario guardado", HttpStatus.CREATED);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 
 	@PostMapping("/login")
 	@CrossOrigin
 	public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-			return new ResponseEntity("CAmpos mal puestos", HttpStatus.BAD_REQUEST);
+
+			return new ResponseEntity("Campos mal puestos", HttpStatus.BAD_REQUEST);
 		}
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
