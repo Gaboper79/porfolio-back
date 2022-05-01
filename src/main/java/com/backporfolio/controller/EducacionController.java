@@ -3,6 +3,7 @@ package com.backporfolio.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.backporfolio.cloudinary.dto.Mensaje;
 import com.backporfolio.model.Educacion;
 import com.backporfolio.service.educacion.EducacionService;
 
@@ -38,7 +40,8 @@ public class EducacionController {
 	@DeleteMapping("{id}")
 	public ResponseEntity<String> deleteEdu(@PathVariable Long id) {
 		eduSVC.deleteEducacion(id);
-		return ResponseEntity.ok("Eliminado Correctamente");
+		return new ResponseEntity(new Mensaje("Eliminada Correctamente"), HttpStatus.OK);
+
 	}
 
 	@PutMapping()

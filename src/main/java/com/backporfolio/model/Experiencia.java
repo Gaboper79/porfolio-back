@@ -16,7 +16,7 @@ public class Experiencia {
 	private Long id;
 	@NotNull
 	private String empresa;
-	private String img;
+	private int imgUser;
 	private String descripcion;
 	@NotNull
 	private String puesto;
@@ -37,14 +37,6 @@ public class Experiencia {
 
 	public void setEmpresa(String empresa) {
 		this.empresa = empresa;
-	}
-
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
 	}
 
 	public String getDescripcion() {
@@ -83,11 +75,19 @@ public class Experiencia {
 
 	}
 
-	public Experiencia(String empresa, String img, String descripcion, String puesto, String fechaInicio,
-			String fechaFin) {
+	public int getImgUser() {
+		return imgUser;
+	}
 
+	public void setImgUser(int imgUser) {
+		this.imgUser = imgUser;
+	}
+
+	public Experiencia(@NotNull String empresa, int imgUser, String descripcion, @NotNull String puesto,
+			String fechaInicio, String fechaFin) {
+		super();
 		this.empresa = empresa;
-		this.img = img;
+		this.imgUser = imgUser;
 		this.descripcion = descripcion;
 		this.puesto = puesto;
 		this.fechaInicio = fechaInicio;
