@@ -26,7 +26,7 @@ import com.backporfolio.cloudinary.service.CloudinaryService;
 import com.backporfolio.cloudinary.service.ImagenService;
 
 @RestController
-@RequestMapping("api/cloudinary")
+@RequestMapping("/cloudinary")
 @CrossOrigin
 public class ControllerCloudinary {
 
@@ -43,8 +43,8 @@ public class ControllerCloudinary {
 	}
 
 	@PostMapping("/upload")
-	public ResponseEntity<?> upload(@RequestParam MultipartFile multipartFile) throws IOException {
-
+	public ResponseEntity<Imagen> upload(@RequestParam MultipartFile multipartFile) throws IOException {
+		System.out.println("Esto llega:" + multipartFile);
 		BufferedImage bi = ImageIO.read(multipartFile.getInputStream());
 		if (bi == null) {
 			return new ResponseEntity(new Mensaje("imagen no valida"), HttpStatus.BAD_REQUEST);
@@ -53,7 +53,7 @@ public class ControllerCloudinary {
 		Imagen imagen = new Imagen((String) result.get("original_filename"), (String) result.get("url"),
 				(String) result.get("public_id"));
 		imagenSVC.save(imagen);
-		return new ResponseEntity(new Mensaje("Imagen subida"), HttpStatus.OK);
+		return new ResponseEntity(imagen, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/delete/{id}")
@@ -65,5 +65,15 @@ public class ControllerCloudinary {
 		Map result = cloudinarySVC.delete(imagen.getImagenId());
 		imagenSVC.delete(id);
 		return new ResponseEntity(new Mensaje("Imagen Eliminada"), HttpStatus.OK);
+	}
+
+	@GetMapping("load/{id}")
+	public ResponseEntity<Imagen> getOnce(@PathVariable("id") int id) {
+		if (!imagenSVC.exists(id)) {
+			return new ResponseEntity(new Mensaje("No existe la imagen"), HttpStatus.NOT_FOUND);
+		}
+		Imagen imagen = imagenSVC.getOne(id).get();
+
+		return new ResponseEntity(imagen, HttpStatus.OK);
 	}
 }

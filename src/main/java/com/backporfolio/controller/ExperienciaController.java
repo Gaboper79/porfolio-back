@@ -3,6 +3,7 @@ package com.backporfolio.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.backporfolio.cloudinary.dto.Mensaje;
 import com.backporfolio.model.Experiencia;
 import com.backporfolio.service.experiencia.ExperienciaService;
 
@@ -33,6 +35,7 @@ public class ExperienciaController {
 	@PostMapping("/add")
 	@CrossOrigin
 	public ResponseEntity<Experiencia> addExperiencia(@RequestBody Experiencia exp) {
+		System.out.println(exp.getImgUser());
 		return ResponseEntity.ok(expSVC.saveExperiencia(exp));
 	}
 
@@ -40,7 +43,7 @@ public class ExperienciaController {
 	@CrossOrigin
 	public ResponseEntity<String> deleteExperiencia(@PathVariable Long id) {
 		expSVC.deleteExperiencia(id);
-		return ResponseEntity.ok("Eliminado Correctamente");
+		return new ResponseEntity(new Mensaje("Eliminada Correctamente"), HttpStatus.OK);
 	}
 
 	@PutMapping()

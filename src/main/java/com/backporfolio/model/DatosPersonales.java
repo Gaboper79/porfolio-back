@@ -13,7 +13,7 @@ public class DatosPersonales {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String imgUser;
+	private int imgUser;
 	private String aboutMe;
 	private String titulo;
 	private String nombre;
@@ -22,7 +22,7 @@ public class DatosPersonales {
 		super();
 	}
 
-	public DatosPersonales(String imgUser, String aboutMe, String titulo, String nombre, RedesSociales redesSociales) {
+	public DatosPersonales(int imgUser, String aboutMe, String titulo, String nombre, RedesSociales redesSociales) {
 		super();
 		this.imgUser = imgUser;
 		this.aboutMe = aboutMe;
@@ -39,11 +39,11 @@ public class DatosPersonales {
 		this.id = id;
 	}
 
-	public String getImgUser() {
+	public int getImgUser() {
 		return imgUser;
 	}
 
-	public void setImgUser(String imgUser) {
+	public void setImgUser(int imgUser) {
 		this.imgUser = imgUser;
 	}
 
