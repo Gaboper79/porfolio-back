@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 public class Experiencia {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
 	private String empresa;

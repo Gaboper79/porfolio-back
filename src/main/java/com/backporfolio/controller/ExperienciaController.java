@@ -35,7 +35,7 @@ public class ExperienciaController {
 	@PostMapping("/add")
 	@CrossOrigin
 	public ResponseEntity<Experiencia> addExperiencia(@RequestBody Experiencia exp) {
-		System.out.println(exp.getImgUser());
+
 		return ResponseEntity.ok(expSVC.saveExperiencia(exp));
 	}
 
