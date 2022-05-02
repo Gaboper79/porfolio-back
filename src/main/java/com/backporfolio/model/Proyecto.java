@@ -17,7 +17,7 @@ public class Proyecto {
 
 	private String link;
 	private String descripcion;
-	private String img;
+	private int imgUser;
 
 	public Proyecto() {
 
@@ -29,14 +29,6 @@ public class Proyecto {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Proyecto(String nombre, String link, String descripcion, String img) {
-
-		this.nombre = nombre;
-		this.link = link;
-		this.descripcion = descripcion;
-		this.img = img;
 	}
 
 	public String getNombre() {
@@ -63,12 +55,21 @@ public class Proyecto {
 		this.descripcion = descripcion;
 	}
 
-	public String getImg() {
-		return img;
+	public int getImgUser() {
+		return imgUser;
 	}
 
-	public void setImg(String img) {
-		this.img = img;
+	public void setImgUser(int imgUser) {
+		this.imgUser = imgUser;
+	}
+
+	public Proyecto(Long id, @NotNull String nombre, String link, String descripcion, int imgUser) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.link = link;
+		this.descripcion = descripcion;
+		this.imgUser = imgUser;
 	}
 
 }

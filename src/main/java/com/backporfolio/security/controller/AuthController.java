@@ -51,6 +51,7 @@ public class AuthController {
 
 	@PostMapping("/nuevo")
 	public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult) {
+		System.out.println("entro");
 		if (bindingResult.hasErrors()) {
 			return new ResponseEntity("Campos mal puestos", HttpStatus.BAD_REQUEST);
 		}
