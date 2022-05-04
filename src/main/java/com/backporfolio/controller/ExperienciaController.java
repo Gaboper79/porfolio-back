@@ -35,7 +35,7 @@ public class ExperienciaController {
 	@PostMapping("/add")
 	@CrossOrigin
 	public ResponseEntity<Experiencia> addExperiencia(@RequestBody Experiencia exp) {
-
+		System.out.println(exp.getFechaIni());
 		return ResponseEntity.ok(expSVC.saveExperiencia(exp));
 	}
 
@@ -43,12 +43,13 @@ public class ExperienciaController {
 	@CrossOrigin
 	public ResponseEntity<String> deleteExperiencia(@PathVariable Long id) {
 		expSVC.deleteExperiencia(id);
+
 		return new ResponseEntity(new Mensaje("Eliminada Correctamente"), HttpStatus.OK);
 	}
 
 	@PutMapping()
 	@CrossOrigin
-	public ResponseEntity<Experiencia> UpdateExperiencia(@RequestBody Experiencia edu) {
-		return ResponseEntity.ok(expSVC.saveExperiencia(edu));
+	public ResponseEntity<Experiencia> UpdateExperiencia(@RequestBody Experiencia exp) {
+		return ResponseEntity.ok(expSVC.saveExperiencia(exp));
 	}
 }

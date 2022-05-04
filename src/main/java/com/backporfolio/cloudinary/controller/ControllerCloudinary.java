@@ -44,13 +44,13 @@ public class ControllerCloudinary {
 
 	@PostMapping("/upload")
 	public ResponseEntity<Imagen> upload(@RequestParam MultipartFile multipartFile) throws IOException {
-		System.out.println("Esto llega:" + multipartFile);
+
 		BufferedImage bi = ImageIO.read(multipartFile.getInputStream());
 		if (bi == null) {
 			return new ResponseEntity(new Mensaje("imagen no valida"), HttpStatus.BAD_REQUEST);
 		}
 		Map result = cloudinarySVC.upload(multipartFile);
-		Imagen imagen = new Imagen((String) result.get("original_filename"), (String) result.get("url"),
+		Imagen imagen = new Imagen((String) result.get("original_filename"), (String) result.get("secure_url"),
 				(String) result.get("public_id"));
 		imagenSVC.save(imagen);
 		return new ResponseEntity(imagen, HttpStatus.OK);

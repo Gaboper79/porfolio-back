@@ -20,7 +20,7 @@ public class Experiencia {
 	private String descripcion;
 	@NotNull
 	private String puesto;
-	private String fechaInicio;
+	private String fechaIni;
 	private String fechaFin;
 
 	public Long getId() {
@@ -55,12 +55,12 @@ public class Experiencia {
 		this.puesto = puesto;
 	}
 
-	public String getFechaInicio() {
-		return fechaInicio;
+	public String getFechaIni() {
+		return fechaIni;
 	}
 
-	public void setFechaInicio(String fechaInicio) {
-		this.fechaInicio = fechaInicio;
+	public void setFechaIni(String fechaIni) {
+		this.fechaIni = fechaIni;
 	}
 
 	public String getFechaFin() {
@@ -84,13 +84,13 @@ public class Experiencia {
 	}
 
 	public Experiencia(@NotNull String empresa, int imgUser, String descripcion, @NotNull String puesto,
-			String fechaInicio, String fechaFin) {
+			String fechaIni, String fechaFin) {
 		super();
 		this.empresa = empresa;
 		this.imgUser = imgUser;
 		this.descripcion = descripcion;
 		this.puesto = puesto;
-		this.fechaInicio = fechaInicio;
+		this.fechaIni = fechaIni;
 		this.fechaFin = fechaFin;
 	}
 
