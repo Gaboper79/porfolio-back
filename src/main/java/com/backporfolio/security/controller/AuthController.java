@@ -50,6 +50,7 @@ public class AuthController {
 	JwtProvider jwtProvider;
 
 	@PostMapping("/nuevo")
+	@CrossOrigin
 	public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult) {
 		System.out.println("entro");
 		if (bindingResult.hasErrors()) {
