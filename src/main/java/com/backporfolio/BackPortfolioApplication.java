@@ -18,7 +18,7 @@ public class BackPortfolioApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/greeting-javaconfig").allowedOrigins("https://git.heroku.com/porfolio-back.git");
+				registry.addMapping("/greeting-javaconfig").allowedOrigins("https://porfoliogp.web.app");
 			}
 		};
 	}
