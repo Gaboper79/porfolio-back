@@ -21,8 +21,8 @@ import com.backporfolio.model.Skills;
 import com.backporfolio.service.skill.SkillService;
 
 @RestController
-@RequestMapping("/api/skill")
-@CrossOrigin(origins = { "https://porfoliogp.web.app", "https://porfoliogp.firebaseapp.com" })
+@CrossOrigin(origins = "https://porfoliogp.web.app")
+@RequestMapping("api/skill")
 public class skillController {
 
 	@Autowired

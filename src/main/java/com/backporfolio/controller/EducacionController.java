@@ -20,8 +20,8 @@ import com.backporfolio.model.Educacion;
 import com.backporfolio.service.educacion.EducacionService;
 
 @RestController
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 @RequestMapping("api/educacion")
-@CrossOrigin(origins = { "https://porfoliogp.web.app", "https://porfoliogp.firebaseapp.com" })
 public class EducacionController {
 
 	@Autowired

@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.backporfolio.model.DatosPersonales;
 import com.backporfolio.service.datosPersonales.DatosPersonalesService;
 
-//algo
 @RestController
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 @RequestMapping("api/datosper")
-@CrossOrigin(origins = { "https://porfoliogp.web.app", "https://porfoliogp.firebaseapp.com" })
 public class datosPersonalesController {
 
 	@Autowired

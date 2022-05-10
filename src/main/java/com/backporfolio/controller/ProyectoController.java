@@ -20,8 +20,8 @@ import com.backporfolio.model.Proyecto;
 import com.backporfolio.service.proyectos.ProyectoService;
 
 @RestController
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 @RequestMapping("api/proyecto")
-@CrossOrigin(origins = { "https://porfoliogp.web.app", "https://porfoliogp.firebaseapp.com" })
 public class ProyectoController {
 	@Autowired
 	private ProyectoService proySVC;

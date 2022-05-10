@@ -20,8 +20,8 @@ import com.backporfolio.model.RedesSociales;
 import com.backporfolio.service.redesSociales.RedesService;
 
 @RestController
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 @RequestMapping("api/redes")
-@CrossOrigin(origins = { "https://porfoliogp.web.app", "https://porfoliogp.firebaseapp.com" })
 public class RedesSocialesController {
 	@Autowired
 	private RedesService redesSvc;
