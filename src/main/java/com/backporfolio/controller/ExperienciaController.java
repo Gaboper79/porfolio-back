@@ -21,7 +21,7 @@ import com.backporfolio.service.experiencia.ExperienciaService;
 
 @RestController
 @RequestMapping("api/experiencia")
-@CrossOrigin(origins = "https://porfoliogp.web.app")
+@CrossOrigin(origins = { "https://porfoliogp.web.app", "https://porfoliogp.firebaseapp.com" })
 public class ExperienciaController {
 	@Autowired
 	private ExperienciaService expSVC;

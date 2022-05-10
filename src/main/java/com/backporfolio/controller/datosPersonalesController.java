@@ -20,7 +20,7 @@ import com.backporfolio.service.datosPersonales.DatosPersonalesService;
 //algo
 @RestController
 @RequestMapping("api/datosper")
-@CrossOrigin(origins = "https://porfoliogp.web.app")
+@CrossOrigin(origins = { "https://porfoliogp.web.app", "https://porfoliogp.firebaseapp.com" })
 public class datosPersonalesController {
 
 	@Autowired

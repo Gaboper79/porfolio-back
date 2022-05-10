@@ -33,7 +33,7 @@ import com.backporfolio.security.service.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "https://porfoliogp.web.app")
+@CrossOrigin(origins = { "https://porfoliogp.web.app", "https://porfoliogp.firebaseapp.com" })
 public class AuthController {
 	@Autowired
 	PasswordEncoder passwordEncoder;
