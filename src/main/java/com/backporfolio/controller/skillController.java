@@ -22,7 +22,7 @@ import com.backporfolio.service.skill.SkillService;
 
 @RestController
 @RequestMapping("/api/skill")
-@CrossOrigin
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 public class skillController {
 
 	@Autowired

@@ -21,7 +21,7 @@ import com.backporfolio.service.educacion.EducacionService;
 
 @RestController
 @RequestMapping("api/educacion")
-@CrossOrigin
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 public class EducacionController {
 
 	@Autowired

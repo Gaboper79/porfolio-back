@@ -21,26 +21,26 @@ import com.backporfolio.service.experiencia.ExperienciaService;
 
 @RestController
 @RequestMapping("api/experiencia")
-@CrossOrigin
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 public class ExperienciaController {
 	@Autowired
 	private ExperienciaService expSVC;
 
 	@GetMapping
-	@CrossOrigin
+
 	public ResponseEntity<List<Experiencia>> getAllExp() {
 		return ResponseEntity.ok(expSVC.getAllExperiencia());
 	}
 
 	@PostMapping("/add")
-	@CrossOrigin
+
 	public ResponseEntity<Experiencia> addExperiencia(@RequestBody Experiencia exp) {
 		System.out.println(exp.getFechaIni());
 		return ResponseEntity.ok(expSVC.saveExperiencia(exp));
 	}
 
 	@DeleteMapping("{id}")
-	@CrossOrigin
+
 	public ResponseEntity<String> deleteExperiencia(@PathVariable Long id) {
 		expSVC.deleteExperiencia(id);
 
@@ -48,7 +48,7 @@ public class ExperienciaController {
 	}
 
 	@PutMapping()
-	@CrossOrigin
+
 	public ResponseEntity<Experiencia> UpdateExperiencia(@RequestBody Experiencia exp) {
 		return ResponseEntity.ok(expSVC.saveExperiencia(exp));
 	}

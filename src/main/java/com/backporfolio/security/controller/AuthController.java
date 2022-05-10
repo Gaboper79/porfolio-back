@@ -33,7 +33,7 @@ import com.backporfolio.security.service.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "https://porfoliogp.web.app/auth")
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 public class AuthController {
 	@Autowired
 	PasswordEncoder passwordEncoder;
@@ -50,7 +50,7 @@ public class AuthController {
 	JwtProvider jwtProvider;
 
 	@PostMapping("/nuevo")
-	@CrossOrigin(origins = "https://porfoliogp.web.app/auth/nuevo")
+
 	public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult) {
 		System.out.println("entro");
 		if (bindingResult.hasErrors()) {
@@ -77,7 +77,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/login")
-	@CrossOrigin(origins = "https://porfoliogp.web.app/auth/login")
+
 	public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 

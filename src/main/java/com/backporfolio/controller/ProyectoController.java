@@ -21,7 +21,7 @@ import com.backporfolio.service.proyectos.ProyectoService;
 
 @RestController
 @RequestMapping("api/proyecto")
-@CrossOrigin
+@CrossOrigin(origins = "https://porfoliogp.web.app")
 public class ProyectoController {
 	@Autowired
 	private ProyectoService proySVC;
