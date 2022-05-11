@@ -26,7 +26,7 @@ import com.backporfolio.cloudinary.service.CloudinaryService;
 import com.backporfolio.cloudinary.service.ImagenService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
+@CrossOrigin(origins = { "https://porfoliogp-arprog.web.app", "http://localhost:4200" })
 @RequestMapping("/cloudinary")
 public class ControllerCloudinary {
 
