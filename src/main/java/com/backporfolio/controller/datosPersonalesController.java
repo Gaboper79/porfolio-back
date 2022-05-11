@@ -18,7 +18,7 @@ import com.backporfolio.model.DatosPersonales;
 import com.backporfolio.service.datosPersonales.DatosPersonalesService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp.web.app")
+@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
 @RequestMapping("api/datosper")
 public class datosPersonalesController {
 

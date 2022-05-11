@@ -20,7 +20,7 @@ import com.backporfolio.model.Experiencia;
 import com.backporfolio.service.experiencia.ExperienciaService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp.web.app")
+@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
 @RequestMapping("api/experiencia")
 public class ExperienciaController {
 	@Autowired

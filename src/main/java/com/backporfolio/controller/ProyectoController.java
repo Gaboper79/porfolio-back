@@ -20,7 +20,7 @@ import com.backporfolio.model.Proyecto;
 import com.backporfolio.service.proyectos.ProyectoService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp.web.app")
+@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
 @RequestMapping("api/proyecto")
 public class ProyectoController {
 	@Autowired
