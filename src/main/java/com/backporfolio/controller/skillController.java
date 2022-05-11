@@ -21,7 +21,7 @@ import com.backporfolio.model.Skills;
 import com.backporfolio.service.skill.SkillService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
+@CrossOrigin(origins = { "https://porfoliogp-arprog.web.app", "http://localhost:4200" })
 @RequestMapping("api/skill")
 public class skillController {
 

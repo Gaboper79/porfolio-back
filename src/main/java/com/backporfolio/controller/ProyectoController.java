@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.backporfolio.cloudinary.dto.Mensaje;
@@ -20,8 +19,7 @@ import com.backporfolio.model.Proyecto;
 import com.backporfolio.service.proyectos.ProyectoService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
-@RequestMapping("api/proyecto")
+@CrossOrigin(origins = { "https://porfoliogp-arprog.web.app", "http://localhost:4200" })
 public class ProyectoController {
 	@Autowired
 	private ProyectoService proySVC;

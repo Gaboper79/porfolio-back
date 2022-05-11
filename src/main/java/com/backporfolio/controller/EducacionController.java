@@ -20,7 +20,7 @@ import com.backporfolio.model.Educacion;
 import com.backporfolio.service.educacion.EducacionService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
+@CrossOrigin(origins = { "https://porfoliogp-arprog.web.app", "http://localhost:4200" })
 @RequestMapping("api/educacion")
 public class EducacionController {
 

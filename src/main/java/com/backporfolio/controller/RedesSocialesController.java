@@ -20,7 +20,7 @@ import com.backporfolio.model.RedesSociales;
 import com.backporfolio.service.redesSociales.RedesService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
+@CrossOrigin(origins = { "https://porfoliogp-arprog.web.app", "http://localhost:4200" })
 @RequestMapping("api/redes")
 public class RedesSocialesController {
 	@Autowired
