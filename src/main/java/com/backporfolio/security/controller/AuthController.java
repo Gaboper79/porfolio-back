@@ -32,7 +32,7 @@ import com.backporfolio.security.service.RolService;
 import com.backporfolio.security.service.UsuarioService;
 
 @RestController
-@CrossOrigin(origins = "https://porfoliogp-arprog.web.app")
+@CrossOrigin(origins = { "https://porfoliogp-arprog.web.app", "http://localhost:4200" })
 @RequestMapping("/auth")
 public class AuthController {
 	@Autowired
